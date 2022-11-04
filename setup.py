@@ -14,7 +14,7 @@ class FirebaseAdmin:
     firebase_database = None
 
     @classmethod
-    def setup(cls):
+    def setup(cls) -> None:
         try:
             file = utils.get_config_file(CONFIG_FILE)
             certification = firebase_admin.creadentials.Certificate(file)

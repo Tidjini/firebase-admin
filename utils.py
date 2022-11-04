@@ -1,21 +1,22 @@
 from os import path
 
-def get_config_file(json_config = None):
+
+def get_config_file(json_config: str = None) -> str:
     '''Try to get json config file by his absolutes path not relative ./path_to/... 
-    
+
     We Assume that config file existe in the directory
     '''
 
     if not json_config:
-        raise FileExistsError('<FileExistsError>: Please enter a valide file name.')
+        raise FileExistsError(
+            '<FileExistsError>: Please enter a valide file name.')
 
     file = path.abspath(__file__)
     directory = path.dirname(file)
     return path.join(directory, json_config)
 
 
-
-def generate_reference(database='database', path=''):
+def generate_reference(database: str = 'database', path: str = '') -> str:
     """generate path, for split path by slash (/) and retun a collection or document
 
     attributes:
